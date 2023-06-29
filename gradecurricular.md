@@ -1,0 +1,32 @@
+# Grade Curricular
+- [ ] Fundamentos de Sistemas de Informação
+- [ ] Fundamentos de Desenvolvimento de Software
+- [ ] Lógica de Programação e Algoritmos
+- [ ] Fundamentos de Design de Sistemas
+- [ ] Programação Orientada a Objetos
+- [ ] Análise de Sistemas
+- [ ] Matemática Aplicada à Computação
+- [ ] Legislação, Ética e Conformidade
+- [ ] Atividades Extensionistas I - Tecnologia aplicada à Inclusão Digital - Levantamento
+- [ ] Fundamentos da Programação Web
+- [ ] Banco de Dados Relacional
+- [ ] Fundamentos do Desenvolvimento Mobile
+- [ ] Design de Interação
+- [ ] Linguagem de Programação Aplicada
+- [ ] Engenharia de Software
+- [ ] Organização de Computadores
+- [ ] Computação em Nuvem
+- [ ] Estrutura de Dados
+- [ ] DevOps e Integração Contínua
+- [ ] Introdução a Inteligência Artificial
+- [ ] Métodos Ágeis
+- [ ] Atividades Extensionistas II - Tecnologia Aplicada à Inclusão Digital - Projeto
+- [ ] Segurança em Sistemas de Informação
+- [ ] Projeto Multidisciplinar de Análise e Desenvolvimento de Sistemas
+- [ ] Gestão de Startups e Inovação
+- [ ] Banco de dados NoSQL
+- [ ] Desenvolvimento Web - Back End
+- [ ] Desenvolvimento Mobile Multiplataforma
+- [ ] Projeto - Desenvolvimento Back-end
+- [ ] Machine Learning (inteligência artificial)
+- [ ] Realidade Virtual e Aumentada
