@@ -3,4 +3,5 @@
 - [x] Linux Ubuntu
 - [x] Arquitetura de Software
 - [x] Figma
-- [ ] UX/UI
+- [x] UX/UI
+- [ ] Python
