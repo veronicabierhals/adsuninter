@@ -13,14 +13,14 @@ qtd = int(input('Quantas unidades?'))
 
 if (produto == 1):
     preco = qtd * 2.30
-    print('Você comprou {} maçãs. Total à pagar: R${}' .format(qtd,preco))
+    print('Você comprou {} maçãs. Total à pagar: R${:.2f}' .format(qtd,preco))
 else:   
     if (produto == 2):
         preco = qtd * 3.60
-        print('Você comprou {} laranjas. Total à pagar: R${}' .format(qtd,preco))
+        print('Você comprou {} laranjas. Total à pagar: R${:.2f}' .format(qtd,preco))
     else:
      if (produto == 3):
         preco = qtd * 1.85
-        print('Você comprou {} bananas. Total à pagar: R${}' .format(qtd,preco))
+        print('Você comprou {} bananas. Total à pagar: R${:.2f}' .format(qtd,preco))
      else:
         print('Produto inexistente!')
