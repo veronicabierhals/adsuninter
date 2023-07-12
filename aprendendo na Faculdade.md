@@ -4,4 +4,4 @@
 - [x] Arquitetura de Software
 - [x] Figma
 - [x] UX/UI
-- [ ] Python
+- [x] Python
