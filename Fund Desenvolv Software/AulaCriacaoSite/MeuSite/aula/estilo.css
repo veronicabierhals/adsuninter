@@ -1,0 +1,20 @@
+h1, p{color: blue; font-size: 12px; font-family: fantasy;}
+h1.supertitulo{color: blue; font-size: 90px; font-family: fantasy;}
+
+#tituloprincipal{font-size: 100px; color: blueviolet;}
+
+p{background-color: rgb(251, 255, 9);}
+p{background-color:rgba(12, 139, 251, 0.397);}
+p{text-align: center;}
+
+.minhalista li {color: rgb(214, 162, 96);}
+
+body {background-color: antiquewhite;}
+
+.caixa{
+    margin: 10px;
+    padding: auto;
+    border: 4px; color: black;
+    width: fit-content;
+    background-color: brown;
+}
