@@ -69,3 +69,6 @@ Conheça a plataforma no link https://jupyter.org/
 
 Há também a opção do Google Colaboyy
 https://colab.research.google.com/notebooks/intro.ipynb
+
+___
+Continua no arquivo ``Python.ipynb``
