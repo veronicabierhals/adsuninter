@@ -21,6 +21,14 @@ Como mencionei, meu objetivo é tornar o conteúdo o mais acessível possível.
 
 ___
 
+## Ferramentas
+
+Nesta seção, você encontrará instruções sobre como utilizar duas ferramentas essenciais para o desenvolvimento e execução de código:  
+
+[Visual Studio Code](https://github.com/veronicabierhals/adsuninter/tree/main/L%C3%B3gica%20e%20Algoritmos): um ambiente de desenvolvimento integrado (IDE) altamente personalizável, ideal para projetos de qualquer tamanho e linguagem de programação.
+
+[Google Colab](https://github.com/veronicabierhals/adsuninter/tree/main/L%C3%B3gica%20e%20Algoritmos): uma plataforma baseada em nuvem para escrever e executar notebooks Jupyter, fornecendo acesso gratuito a recursos computacionais, como CPUs, GPUs e TPUs. Ideal para colaboração e experimentação com código Python e aprendizado de máquina.
+
 ## Vamos às disciplinas!
 
 [Lógica de Programação e Algoritmos](https://github.com/veronicabierhals/adsuninter/tree/main/L%C3%B3gica%20e%20Algoritmos)  
