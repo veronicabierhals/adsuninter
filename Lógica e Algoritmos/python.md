@@ -71,4 +71,4 @@ Há também a opção do Google Colaboyy
 https://colab.research.google.com/notebooks/intro.ipynb
 
 ___
-Continua no arquivo ``Python.ipynb``
+Continua no arquivo [Python.ipynb](https://github.com/veronicabierhals/adsuninter/blob/main/L%C3%B3gica%20e%20Algoritmos/Python.ipynb)
