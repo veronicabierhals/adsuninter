@@ -1,17 +1,17 @@
 # Grade Curricular
-- [ ] Fundamentos de Sistemas de Informação
-- [ ] Fundamentos de Desenvolvimento de Software
-- [ ] Lógica de Programação e Algoritmos
-- [ ] Fundamentos de Design de Sistemas
+- [x] Fundamentos de Sistemas de Informação
+- [x] Fundamentos de Desenvolvimento de Software
+- [x] Lógica de Programação e Algoritmos
+- [x] Fundamentos de Design de Sistemas
 - [ ] Programação Orientada a Objetos
-- [ ] Análise de Sistemas
+- [x] Análise de Sistemas
 - [ ] Matemática Aplicada à Computação
 - [ ] Legislação, Ética e Conformidade
 - [ ] Atividades Extensionistas I - Tecnologia aplicada à Inclusão Digital - Levantamento
 - [ ] Fundamentos da Programação Web
 - [ ] Banco de Dados Relacional
 - [ ] Fundamentos do Desenvolvimento Mobile
-- [ ] Design de Interação
+- [x] Design de Interação
 - [ ] Linguagem de Programação Aplicada
 - [ ] Engenharia de Software
 - [ ] Organização de Computadores
