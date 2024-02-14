@@ -34,3 +34,9 @@ Nesta seção, você encontrará instruções sobre como utilizar duas ferrament
 [Lógica de Programação e Algoritmos](https://github.com/veronicabierhals/adsuninter/tree/main/L%C3%B3gica%20e%20Algoritmos)  
 
 Neste link, você encontrará os [fundamentos de Python](https://github.com/veronicabierhals/adsuninter/blob/main/L%C3%B3gica%20e%20Algoritmos/python.md).
+
+<br>
+
+[Fundamentos de Desenvolvimento Web](https://github.com/veronicabierhals/adsuninter/tree/main/Fund%20Desenv%20Web)
+
+Neste link, você encontrará os [fundamentos de HTML](https://github.com/veronicabierhals/adsuninter/tree/main/Fund%20Desenv%20Web/html).
