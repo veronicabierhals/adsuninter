@@ -57,6 +57,108 @@
             </tr>
         </table>
 
+        <h2>Mesclagem de tabelas</h2>
+        <table border="1">
+            <tr>
+                <td colspan="2">Linha 1 coluna 1 e 2</td>
+                <td rowspan="2">coluna 3 linhas 1 e 2</td>
+            </tr>
+            <tr>
+                <td>Linha 2 célula 1</td>
+                <td>Linha 2 célula 2</td>
+            </tr>
+            <tr>
+                <td>Linha 3 célula 1</td>
+                <td>Linha 3 célula 2</td>
+                <td>Linha 3 célula 3</td>
+            </tr>
+        </table>
+
+        <h2>Acessibilidade em tabelas</h2>
+        <table border="1" summary="Tabela com preços em reais de ameixa e pera">
+            <caption>
+                Preços em reais de ameixa e pera em Campinas
+            </caption>
+            <tr>
+                <td></td>
+                <th>Ameixa</th>
+                <th>Pera</th>
+            </tr>
+            <tr>
+                <th>Atacado</th>
+                <td>1,00</td>
+                <td>1,50</td>
+            </tr>
+            <tr>
+                <th>Varejo</th>
+                <td>2,00</td>
+                <td>2,50</td>
+            </tr>
+        </table>
+
+        <h2>Mesclagem de tabelas com acessibilidade</h2>
+        <table
+            border="1"
+            summary="Preços em reais no varejo e atacado para laranjas e maçãs importadas e nacionais nas cidades do Rio de Janeiro e de São Paulo. Existem dois níveis de cabeçalhos nas colunas."
+        >
+            <caption>
+                Preços em reais ara laranjas e maçãs importadas e nacionais nas
+                cidades do Rio de Janeiro e de São Paulo
+            </caption>
+            <thead>
+                <tr>
+                    <td></td>
+                    <th colspan="2" id="importada">Importada</th>
+                    <th colspan="2" id="nacional">Nacional</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <th id="laranja-imp">Laranjas</th>
+                    <th id="macas-imp">Maçãs</th>
+                    <th id="laranja-nac">Laranjas</th>
+                    <th id="macas-nac">Maçãs</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th id="rio" colspan="5">Rio de Janeiro</th>
+                </tr>
+                <tr>
+                    <th headers="rio" id="atacado-rio">Atacado</th>
+                    <td headers="importada laranja-imp rio atacado-rio">
+                        1,00
+                    </td>
+                    <td headers="importada maca-imp rio atacado-rio">1,25</td>
+                    <td headers="nacional laranja-nac rio atacado-rio">1,20</td>
+                    <td headers="nacional maca-nac rio atacado-rio">1,00</td>
+                </tr>
+                <tr>
+                    <th headers="rio" id="varejo-rio">Varejo</th>
+                    <td headers="importada laranja-imp rio varejo-rio">2,00</td>
+                    <td headers="importada maca-imp rio varejo-rio">3,00</td>
+                    <td headers="nacional laranja-nac rio varejo-rio">1,80</td>
+                    <td headers="nacional maca-nac rio varejo-rio">1,60</td>
+                </tr>
+                <tr>
+                    <th id="sp" colspan="5">São Paulo</th>
+                </tr>
+                <tr>
+                    <th headers="sp" id="atacado-sp">Atacado</th>
+                    <td headers="importada laranja-imp sp atacado-sp">1,20</td>
+                    <td headers="importada maca-imp sp atacado-sp">1,30</td>
+                    <td headers="nacional laranja-nac sp atacado-sp">1,00</td>
+                    <td headers="nacional maca-nac sp atacado-sp">0,80</td>
+                </tr>
+                <tr>
+                    <th headers="sp" id="varejo-sp">Varejo</th>
+                    <td headers="importada laranja-imp sp varejo-sp">1,60</td>
+                    <td headers="importada maca-imp sp varejo-sp">2,00</td>
+                    <td headers="nacional laranja-nac sp varejo-sp">2,80</td>
+                    <td headers="nacional maca-nac sp varejo-sp">1,50</td>
+                </tr>
+            </tbody>
+        </table>
+
         <h2>Formulários</h2>
         <form action="" method="">
             <table>
@@ -81,7 +183,9 @@
                         <label for="msg">Digite sua mensagem:</label>
                     </th>
                     <td>
-                        <textarea name="msg" rows="5" cols="40">Digite sua mensagem</textarea>
+                        <textarea name="msg" rows="5" cols="40">
+Digite sua mensagem</textarea
+                        >
                     </td>
                 </tr>
                 <tr>
@@ -89,6 +193,53 @@
                     <td><button>Enviar</button></td>
                 </tr>
             </table>
+        </form>
+
+        <h2>Formulários envio por email</h2>
+        <form action="email.php" method="post">
+            <label for="nome">Nome:</label>
+            <input
+                type="text"
+                name="nome"
+                placeholder="Digite seu nome"
+                size="50"
+                maxlength="50"
+            />
+            <br /><br />
+            <label for="senha">Senha:</label>
+            <input
+                type="password"
+                name="senha"
+                placeholder="Digite sua senha"
+                size="15"
+                maxlength="8"
+            />
+            <br /><br />
+            <fieldset>
+                <label for="linguagem">Linguagem que tem interesse:</label>
+                <br /><br />
+                <input type="checkbox" name="lingugem[]" value="c++" />c++
+                <input type="checkbox" name="lingugem[]" value="php" />php
+                <input type="checkbox" name="lingugem[]" value="delphi" />delphi
+            </fieldset>
+            <br /><br />
+            <label for="linguagemEscolhida"
+                >Linguagem que irá cursar agora:</label
+            >
+            <br /><br />
+            <input type="radio" name="curso" value="c++" />c++
+            <input type="radio" name="curso" value="php" />php
+            <input type="radio" name="curso" value="delphi" />delphi
+            <br /><br /><br />
+            <label for="linguagem">Escolha sua linguagem:</label>
+            <br /><br />
+            <select name="escola">
+                <option value="c++">c++</option>
+                <option value="php">php</option>
+                <option value="delphi">delphi</option>
+            </select>
+            <br /><br />
+            <input type="submit" name="submit" id="submit" value="Enviar" />
         </form>
     </body>
 </html>
