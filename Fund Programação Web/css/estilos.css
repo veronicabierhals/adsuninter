@@ -1,0 +1,53 @@
+* {
+    text-align: center;
+    color: blue;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+p {
+    color: red;
+}
+
+#paragrafo {
+    color: rgb(255, 255, 255);
+}
+
+.titulo {
+    color: rgb(73, 29, 58);
+}
+
+p,
+h1,
+h2 {
+    text-align: center;
+}
+
+.tamanho {
+    width: 30%;
+    height: 250px;
+    border: solid 1px;
+    border-radius: 50px 5px;
+}
+
+.espaco {
+    padding: 20px;
+}
+
+.principal {
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+}
+
+.cor1 {
+    background-color: black;
+}
+
+.cor2 {
+    background-color: blueviolet;
+}
+
+.cor3 {
+    background-color: aquamarine;
+}
