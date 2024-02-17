@@ -31,12 +31,15 @@ Nesta seção, você encontrará instruções sobre como utilizar duas ferrament
 
 ## Vamos às disciplinas!
 
-[Lógica de Programação e Algoritmos](https://github.com/veronicabierhals/adsuninter/tree/main/L%C3%B3gica%20e%20Algoritmos)  
+### [Lógica de Programação e Algoritmos](https://github.com/veronicabierhals/adsuninter/tree/main/L%C3%B3gica%20e%20Algoritmos)  
 
-Neste link, você encontrará os [fundamentos de Python](https://github.com/veronicabierhals/adsuninter/blob/main/L%C3%B3gica%20e%20Algoritmos/python.md).
+[Fundamentos de Python](https://github.com/veronicabierhals/adsuninter/blob/main/L%C3%B3gica%20e%20Algoritmos/python.md)
 
 <br>
 
-[Fundamentos de Desenvolvimento Web](https://github.com/veronicabierhals/adsuninter/tree/main/Fund%20Desenv%20Web)
+### [Fundamentos de Programação Web](https://github.com/veronicabierhals/adsuninter/tree/main/Fund%20Programa%C3%A7%C3%A3o%20Web)
 
-Neste link, você encontrará os [fundamentos de HTML](https://github.com/veronicabierhals/adsuninter/tree/main/Fund%20Desenv%20Web/html).
+[Fundamentos de HTML](https://github.com/veronicabierhals/adsuninter/tree/main/Fund%20Programa%C3%A7%C3%A3o%20Web/html)
+<br>
+[Fundamentos de CSS](https://github.com/veronicabierhals/adsuninter/tree/main/Fund%20Programa%C3%A7%C3%A3o%20Web/css)
+
