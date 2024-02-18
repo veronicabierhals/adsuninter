@@ -1,53 +1,88 @@
-* {
+/* Reset de margens e paddings */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
     text-align: center;
-    color: blue;
-    margin: 0 auto;
-    padding: 0 auto;
+    padding: 10px 0;
 }
 
-p {
-    color: red;
-}
-
-#paragrafo {
-    color: rgb(255, 255, 255);
-}
-
-.titulo {
-    color: rgb(73, 29, 58);
-}
-
-p,
-h1,
-h2 {
-    text-align: center;
-}
-
-.tamanho {
-    width: 30%;
-    height: 250px;
-    border: solid 1px;
-    border-radius: 50px 5px;
-}
-
-.espaco {
+main {
     padding: 20px;
 }
 
-.principal {
-    width: 100%;
+/* Layout e estilo dos elementos */
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.box {
+    width: 200px;
     padding: 20px;
-    margin: auto;
+    margin: 20px;
+    text-align: center;
+    border: 2px solid #333;
+    border-radius: 10px;
 }
 
-.cor1 {
-    background-color: black;
+.box p {
+    font-size: 18px;
 }
 
-.cor2 {
-    background-color: blueviolet;
+/* Cores dos elementos */
+.azul {
+    background-color: #3498db;
 }
 
-.cor3 {
-    background-color: aquamarine;
+.verde {
+    background-color: #2ecc71;
+}
+
+.rosa {
+    background-color: #e73c6f;
+}
+
+/* Posicionamento */
+.verde {
+    position: relative;
+    top: -20px;
+}
+
+.rosa {
+    float: right;
+    clear: right;
+}
+
+/* Z-index */
+.azul {
+    z-index: 1;
+}
+
+.verde {
+    z-index: 2;
+}
+
+.rosa {
+    z-index: 3;
+}
+
+/* Pseudo-elemento */
+.box::after {
+    content: "Elemento Pseudo";
+    display: block;
+    color: #fff;
+    background-color: #333;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
 }

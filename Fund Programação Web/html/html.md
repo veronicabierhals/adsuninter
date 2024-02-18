@@ -94,7 +94,8 @@ Valores:
 `_top` - Abre o documento em todo o corpo da janela
 
 Ex.:  
-`<a href="https://www.google.com" target="_blank">Visite o Google</a>`
+
+    <a href="https://www.google.com" target="_blank">Visite o Google</a>
 
 ### **Imagens**
 
@@ -114,10 +115,12 @@ Utilizamos a tag `<table>` para criar tabelas, juntamente com os elementos:
 `<td>` → células de dados
 
 **Mesclagem de tabelas**  
+
 `colspan` → mescla colunas  
 `rowspan` → mescla linhas
 
 **Acessibilidade em tabelas**  
+
 Utilizado por leitores de tela  
 `caption` → título da tabela  
 `summary` → descrever o objetivo da tabela  
