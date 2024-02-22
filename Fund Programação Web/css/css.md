@@ -1676,4 +1676,655 @@ Aqui está um exemplo básico de como usar transições CSS:
 
 Neste exemplo, quando o mouse passa sobre o botão com a classe ``.botao``, a cor de fundo muda de #3498db para #2980b9 suavemente ao longo de 0.3 segundos, utilizando uma função de temporização ease-in-out.
 
+## **Grids**
+
+Sistemas de layout que nos permitem organizar o conteúdo de uma página da web em linhas e colunas.  
+Esses sistemas são especialmente úteis para criar layouts responsivos e bem estruturados. 
+
+### **Grids CSS**
+
+Com o advento do CSS Grid Layout, agora temos uma maneira flexível de criar grids diretamente em CSS, sem depender tanto de estruturas HTML específicas.  
+O CSS Grid permite criar layouts bidimensionais, com linhas e colunas, e posicionar elementos de forma precisa.
+
+As propriedades do CSS Grid são usadas para definir a estrutura visual do layout do grid, enquanto o HTML fornece o conteúdo semântico da página. Ao usar CSS Grid, é importante escolher elementos HTML semanticamente apropriados para o seu conteúdo e aplicar o layout de grid usando CSS para organizar esse conteúdo visualmente. Isso ajuda a manter a acessibilidade e a semântica da sua página enquanto cria layouts flexíveis e responsivos.
+
+Exemplo básico de CSS Grid:
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; /* 3 colunas de largura igual */
+        grid-gap: 10px; /* Espaçamento entre as células */
+    }
+
+### **Grids HTML**
+
+Antes do CSS Grid, os desenvolvedores frequentemente recorriam a sistemas de grid baseados em classes HTML e frameworks CSS como Bootstrap ou Foundation.  
+Esses sistemas geralmente exigem uma estrutura HTML específica, com classes que definem o comportamento das células do grid.
+
+Exemplo básico de grid HTML com Bootstrap:
+
+    <div class="container">
+        <div class="row">
+            <div class="col">Coluna 1</div>
+            <div class="col">Coluna 2</div>
+            <div class="col">Coluna 3</div>
+        </div>
+    </div>
+
+### **Grid Container**
+
+É o elemento que contém os itens do grid. É o pai dos itens do grid e onde você define as propriedades de layout do grid.  
+
+Em termos de semântica, o Grid Container pode ser qualquer elemento HTML que faça sentido em seu contexto.  
+
+Por exemplo, você pode usar um ``<div>`` genérico como contêiner de grid ou um elemento com significado semântico, como ``<section>`` ou ``<main>``, dependendo da estrutura do seu conteúdo.
+
+    html
+    <div class="grid-container">
+    <!-- Itens do grid aqui -->
+    </div>
+Neste exemplo, um ``<div>`` é usado como um contêiner de grid. Este elemento contém os itens do grid e é onde as propriedades de layout do grid serão aplicadas.
+
+
+### **grid-template-columns e grid-template-rows**
+
+Permitem definir o número e o tamanho das colunas e linhas do grid, respectivamente.  
+
+Você pode especificar os tamanhos das colunas/linhas em pixels, porcentagens, unidades flexíveis (fr) ou outras unidades CSS.  
+
+    css
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr; /* Define três colunas com larguras proporcionais */
+        grid-template-rows: auto 100px; /* Define duas linhas, uma com altura automática e outra com 100 pixels */
+    }
+
+### **Gap**
+
+Define o espaçamento entre as células do grid, tanto horizontalmente quanto verticalmente.  
+
+Você pode especificar um valor para o espaçamento em pixels, em porcentagens ou em outras unidades CSS.  
+
+    css
+    .grid-container {
+        display: grid;
+        grid-gap: 20px; /* Define um espaçamento de 20 pixels entre as células do grid */
+    }
+
+
+### **grid-template**
+
+É uma propriedade abreviada que combina as propriedades grid-template-rows, grid-template-columns e grid-template-areas em uma única declaração.  
+
+Ela permite definir a estrutura do grid, incluindo as linhas, colunas e áreas nomeadas, tudo em uma única linha de código.  
+
+    css
+    .grid-container {
+        display: grid;
+        grid-template:
+            "header header header"
+            "sidebar content content"
+            "footer footer footer";
+    }
+Neste exemplo, estamos definindo um layout de grid com três linhas e três colunas, onde as áreas são nomeadas como "header", "sidebar", "content" e "footer".
+
+### **grid-items**
+
+O posicionamento de grid-items no CSS Grid refere-se à maneira como os itens individuais dentro do grid são colocados e organizados.  
+Isso pode ser feito especificando as linhas e colunas em que cada item deve ser colocado ou usando propriedades que afetam o posicionamento dentro das células do grid. 
+
+**Definindo linhas e colunas:**  
+
+Você pode usar as propriedades ``grid-column`` e ``grid-row`` para especificar em qual linha e coluna um item do grid deve ser colocado.
+
+    .grid-item {
+        grid-column: 2 / 4; /* Ocupa da segunda à quarta coluna */
+        grid-row: 1 / 3; /* Ocupa da primeira à segunda linha */
+    }
+
+**Posicionamento automático:**  
+
+Se você não especificar explicitamente o posicionamento de um item, ele será colocado automaticamente em ordem, começando da primeira linha e primeira coluna.
+
+    .grid-item:nth-child(2) {
+        /* Este item será colocado automaticamente na segunda posição do grid */
+    }
+
+**Espaçamento interno:**
+
+Você pode usar a propriedade ``grid-gap`` para adicionar espaçamento entre os itens do grid, o que pode afetar indiretamente o posicionamento visual.
+
+    .grid-container {
+        display: grid;
+        grid-gap: 20px; /* Adiciona espaçamento de 20 pixels entre os itens do grid */
+    }
+
+**Alinhamento e justificação:**
+
+As propriedades ``justify-self`` e ``align-self`` podem ser usadas para alinhar itens individualmente dentro das células do grid.
+
+    .grid-item {
+        justify-self: center; /* Alinha o item horizontalmente no centro da célula */
+        align-self: end; /* Alinha o item verticalmente na parte inferior da célula */
+    }
+
+**Ordenação:**
+
+A propriedade ``order`` permite reorganizar visualmente a ordem dos itens do grid, independentemente da ordem no HTML.
+
+    .grid-item:nth-child(3) {
+        order: 1; /* Coloca este item como o primeiro visualmente */
+    }
+
+### **Função repeat()**
+
+A função ``repeat()`` permite repetir um padrão de valores várias vezes.  
+Ela é frequentemente usada em conjunto com propriedades que aceitam uma lista de valores, como ``grid-template-columns`` e ``grid-template-rows``, para definir um padrão de colunas ou linhas de forma mais concisa.
+
+A sintaxe básica da função repeat() é ``repeat(n, value)``, onde n é o número de repetições e value é o valor a ser repetido.  
+
+Exemplo de uso da função repeat() com grid-template-columns:
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 100px); /* Cria três colunas de 100 pixels cada */
+    }
+
+Neste exemplo, repeat(3, 100px) cria três colunas de 100 pixels cada dentro do grid.
+
+### **Função calc()**
+
+A função ``calc()`` permite realizar cálculos matemáticos para definir valores de propriedades CSS.   
+Ela é útil para criar layouts mais dinâmicos e adaptáveis, especialmente em situações onde valores precisam ser relativos a outras propriedades.  
+
+A sintaxe básica da função calc() é ``calc(expressão)``, onde expressão é uma expressão matemática que pode incluir operadores aritméticos (+, -, *, /) e unidades de medida.  
+
+Exemplo de uso da função calc() para definir a largura de um elemento com base em porcentagem:
+
+    .element {
+        width: calc(50% - 20px); /* Define a largura como metade do contêiner menos 20 pixels */
+    }
+
+Neste exemplo, a largura do elemento é definida como metade da largura do contêiner, subtraindo 20 pixels.
+
+### **Posicionamento com regiões nomeadas**
+
+É uma técnica avançada de layout no CSS Grid, onde é possível nomear áreas específicas dentro do grid e, em seguida, posicionar os itens do grid nessas áreas nomeadas.  
+
+Ele oferece uma maneira clara e declarativa de definir a estrutura do layout, o que pode melhorar a legibilidade e a manutenção do código CSS.
+
+**Definindo áreas nomeadas:**  
+
+Para definir áreas nomeadas em um grid, você usa a propriedade ``grid-template-areas`` no ``grid-Container``, especificando os nomes das áreas em um esquema de grade.
+
+    css
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+            "header header"
+            "sidebar content"
+            "footer footer";
+    }
+
+Neste exemplo, estamos definindo três áreas nomeadas: "header", "sidebar" e "footer", cada uma ocupando duas colunas no grid.
+
+**Posicionando itens nas áreas nomeadas:**
+
+Depois de definir as áreas nomeadas, você pode posicionar os itens do grid nessas áreas usando a propriedade ``grid-area``.
+
+    css
+    .item {
+        grid-area: header;
+    }
+
+Neste exemplo, estamos posicionando um item do grid na área nomeada "header".
+
+Exemplo completo:
+
+    html
+
+    <div class="grid-container">
+        <div class="item" style="grid-area: header;">Header</div>
+        <div class="item" style="grid-area: sidebar;">Sidebar</div>
+        <div class="item" style="grid-area: content;">Content</div>
+        <div class="item" style="grid-area: footer;">Footer</div>
+    </div>
+
+    css
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "sidebar content"
+                "footer footer";
+            grid-gap: 10px;
+        }
+        .item {
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+### **Unidade de Medida fr**
+
+A unidade de medida ``fr`` (fração) é uma unidade de medida exclusiva do CSS Grid que permite distribuir o espaço disponível em uma grade entre as colunas ou linhas de forma proporcional.  
+A unidade ``fr`` divide o espaço disponível em partes iguais, atribuindo uma fração do espaço a cada coluna ou linha com base na proporção especificada.
+
+A semântica da unidade ``fr`` está diretamente relacionada à distribuição de espaço dentro de um contêiner de grid.  
+Ela permite criar layouts flexíveis e responsivos, onde as colunas e linhas podem se ajustar dinamicamente ao tamanho do contêiner e ao conteúdo dentro dele.  
+
+A unidade de medida fr é uma ferramenta poderosa para criar layouts fluidos e responsivos com o CSS Grid. Ela oferece uma maneira simples e eficaz de distribuir o espaço disponível em uma grade de forma proporcional, o que é fundamental para criar layouts flexíveis e adaptáveis a diferentes tamanhos de tela e dispositivos.  
+
+Aqui estão alguns exemplos de como pode-se usar a unidade fr:
+
+**Distribuição proporcional de espaço:**
+
+    css
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr; /* Distribui o espaço em três colunas, sendo a segunda coluna com o dobro do tamanho da primeira e terceira */
+    }
+
+**Uso em conjunto com outras unidades de medida:**
+
+    css
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 100px 2fr; /* Distribui o espaço em três colunas, sendo a primeira e terceira coluna ocupando uma fração do espaço disponível e a segunda coluna com 100 pixels de largura */
+    }
+
+**Uso em linhas:**
+
+    css
+    .grid-container {
+        display: grid;
+        grid-template-rows: 1fr 2fr; /* Distribui o espaço em duas linhas, sendo a segunda linha com o dobro do tamanho da primeira */
+    }
+
+**Uso em layouts responsivos:**
+
+    css
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr; /* Distribui o espaço em uma única coluna, ocupando todo o espaço disponível */
+    }
+
+    @media (min-width: 768px) {
+        .grid-container {
+            grid-template-columns: repeat(2, 1fr); /* Em telas maiores, distribui o espaço em duas colunas com larguras iguais */
+        }
+    }
+
+### **Função minmax()**
+
+Permite definir um intervalo para o tamanho de uma coluna ou linha em uma grade.  
+Essa função é útil para criar layouts flexíveis, onde você deseja especificar um tamanho mínimo e máximo para elementos de grade, permitindo que eles se ajustem dinamicamente dependendo do conteúdo ou do espaço disponível.  
+
+A função ``minmax()`` é especialmente útil quando combinada com outras unidades de medida, como ``fr``, para criar layouts flexíveis e responsivos.   
+Ela permite que especifique limites claros para o tamanho dos elementos de grade, garantindo que o layout se adapte de forma eficaz a diferentes tamanhos de tela e conteúdos variáveis.  
+
+A semântica da função minmax() está diretamente relacionada à definição de intervalos de tamanho para colunas e linhas em uma grade, o que é essencial para garantir layouts responsivos e adaptáveis.
+
+Aqui está a sintaxe básica da função minmax():
+
+    css
+    minmax(min, max)
+
+Onde:
+
+``min`` é o tamanho mínimo que a coluna ou linha pode ter.  
+``max`` é o tamanho máximo que a coluna ou linha pode ter.
+
+Exemplo de uso da função ``minmax()`` para definir o tamanho das colunas em uma grade:
+
+    css
+    .grid-container {
+        display: grid;
+        grid-template-columns: minmax(100px, 1fr) minmax(200px, 2fr);
+    }
+
+Neste exemplo, estamos definindo duas colunas em uma grade.  
+A primeira coluna terá um tamanho mínimo de 100 pixels e uma fração do espaço disponível (1fr) como tamanho máximo.  
+A segunda coluna terá um tamanho mínimo de 200 pixels e o dobro da fração do espaço disponível (2fr) como tamanho máximo.
+
+## **Flexbox**
+
+Ou Flexible Box Layout, é um modelo de layout bidimensional que permite criar layouts mais complexos e flexíveis em CSS.  
+
+Ele introduz um novo sistema de layout, que é especialmente útil para organizar elementos em uma única dimensão - seja horizontal ou verticalmente.  
+
+### **Container (Pai)**
+
+O elemento que envolve todos os itens flexíveis. Para criar um container flexível, você define o display como flex:
+
+    css
+    .container {
+        display: flex;
+    }
+
+### **Flex Item (Filho)**
+
+Os elementos filhos dentro do container flexível são chamados de itens flexíveis.  
+Eles se adaptam ao espaço disponível dentro do container de acordo com as propriedades do Flexbox.
+
+### **Propriedades do Container (Pai)**
+
+``display``  
+Define um container como um flex container.  
+
+Sintaxe:
+
+    display: flex;
+
+``flex-direction``  
+Define a direção principal dos itens flexíveis no container.  
+
+Sintaxe:
+
+    flex-direction: row | row-reverse | column | column-reverse;
+
+``justify-content``  
+Alinha os itens flexíveis ao longo do eixo principal do container.  
+
+Sintaxe:
+
+    justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+
+``flex-wrap``  
+Define se os itens flexíveis devem envolver em múltiplas linhas ou não.
+
+Sintaxe:
+
+    flex-wrap: nowrap | wrap | wrap-reverse;
+
+``align-items``  
+Alinha os itens flexíveis ao longo do eixo transversal do container.  
+
+Sintaxe:
+
+    align-items: stretch | flex-start | flex-end | center | baseline;
+
+``align-conten``  
+Alinha as linhas flexíveis quando há espaço extra no eixo transversal.  
+
+Sintaxe:
+
+    align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+
+Exemplo completo:
+
+    css
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        align-content: space-around;
+    }
+
+    .item {
+        flex: 1 1 200px; /* Tamanho flexível: grow, shrink, base */
+        /* Outras propriedades de estilo */
+    }
+
+Neste exemplo, temos um container flexível com vários itens flexíveis.  
+
+Os itens são distribuídos horizontalmente (``flex-direction: row``) com espaço entre eles (``justify-content: space-between``).  
+
+Eles são alinhados verticalmente no centro (``align-items: center``).  
+
+Se houver mais de uma linha de itens, o espaço extra é distribuído uniformemente ao redor de cada linha (``align-content: space-around``).  
+
+Cada item flexível possui uma largura mínima de 200 pixels e pode crescer e encolher conforme necessário.
+
+## **Media queries**
+
+As Media Queries são uma parte crucial do desenvolvimento responsivo da web, permitindo que os estilos CSS sejam adaptados com base nas características do dispositivo ou do navegador em que o conteúdo está sendo exibido.  
+
+As Media Queries oferecem uma boa maneira de criar layouts responsivos e adaptáveis, garantindo que o conteúdo seja exibido de forma adequada em uma variedade de dispositivos e tamanhos de tela.  
+A estratégia "Mobile First" é uma abordagem eficaz para garantir uma experiência de usuário consistente em todos os dispositivos.
+
+### **Anatomia das Media Queries:**
+
+Uma Media Query consiste em uma regra de CSS que define um conjunto de estilos a serem aplicados quando determinadas condições são atendidas.  
+
+A sintaxe básica de uma Media Query é:
+
+    @media (condição) {
+        /* Estilos a serem aplicados */
+    }
+
+### **Funcionalidades Media Query:**
+
+**Width (largura) e Height (altura):**  
+Controla as larguras e alturas da janela do navegador.
+
+    @media (min-width: 768px) {
+        /* Estilos para telas maiores que 768px de largura */
+    }
+
+**Device-Width (largura do dispositivo) e Device-Height (altura do dispositivo):**  
+Controla as dimensões físicas do dispositivo.
+
+    @media (max-device-width: 480px) {
+        /* Estilos para dispositivos com largura máxima de 480px */
+    }
+
+**Orientation (orientação):**  
+Controla a orientação do dispositivo (paisagem ou retrato).
+
+    @media (orientation: landscape) {
+        /* Estilos para dispositivos na orientação paisagem */
+    }
+
+**Aspect-Ratio (proporção de aspecto) e Device-Aspect-Ratio (proporção de aspecto do dispositivo):**  
+Controla a proporção de aspecto da tela ou do dispositivo.
+
+    @media (min-aspect-ratio: 16/9) {
+        /* Estilos para telas com uma proporção de aspecto mínima de 16:9 */
+    }
+
+**Color, Color-Index e Monochrome:**  
+Controla a profundidade de cor, o índice de cores e a capacidade monocromática do dispositivo.
+
+    @media (min-color: 256) {
+        /* Estilos para dispositivos com capacidade de cor mínima de 256 */
+    }
+
+**Resolution (resolução):**  
+Controla a resolução de exibição do dispositivo.
+
+    @media (min-resolution: 300dpi) {
+        /* Estilos para dispositivos com resolução mínima de 300dpi */
+    }
+
+**Scan (varredura) e Grid:**  
+Controla a progressão de varredura da tela e a capacidade de grid do dispositivo.
+
+### **Breakpoints:**
+
+Os breakpoints são pontos específicos em que o layout de uma página da web muda em resposta à largura da tela ou a outras características do dispositivo.  
+
+No modelo "Mobile First", o design é primeiro otimizado para dispositivos móveis e, em seguida, é gradualmente aprimorado para dispositivos maiores usando Media Queries.  
+
+
+Exemplo de Uso:
+
+css
+
+    /* Estilos base para dispositivos móveis */
+    body {
+        font-size: 16px;
+    }
+
+    /* Media Query para telas maiores que 768px */
+    @media (min-width: 768px) {
+        body {
+            font-size: 18px;
+        }
+    }
+
+Neste exemplo, o tamanho da fonte é aumentado para 18 pixels em dispositivos com largura de tela maior que 768 pixels.
+
+## **Responsividade em imagens**
+
+A responsividade em imagens é uma parte importante do desenvolvimento web moderno, garantindo que as imagens sejam exibidas de forma adequada e otimizada em uma variedade de dispositivos e tamanhos de tela.  
+Existem várias técnicas para tornar as imagens responsivas.
+
+### **Largura máxima com max-width:**
+
+Essa técnica permite que as imagens redimensionem proporcionalmente em dispositivos menores, impedindo que ultrapassem a largura do contêiner pai.  
+
+    html
+
+    <img src="imagem.jpg" style="max-width: 100%;" alt="Descrição da imagem">
+
+Neste exemplo, a largura máxima da imagem é definida como 100%, garantindo que ela nunca ultrapasse a largura do contêiner pai, tornando-a responsiva.  
+
+### **Largura em porcentagem:**
+
+É possível definir diretamente a largura da imagem em porcentagem, em relação à largura do contêiner pai.
+
+    html
+
+    <img src="imagem.jpg" style="width: 50%;" alt="Descrição da imagem">
+
+Neste caso, a imagem terá sempre metade da largura do contêiner pai, tornando-a responsiva.  
+
+### **CSS com max-width:**
+
+Aplicar estilos CSS para imagens no arquivo de estilo, usando max-width para garantir a responsividade.
+
+    css
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+Isso garante que todas as imagens do site tenham uma largura máxima de 100% do contêiner pai e mantenham sua proporção original de largura para altura, tornando-as responsivas.  
+
+### **Unidades de viewport:**
+
+Usar unidades de viewport, como ``vw`` (viewport width) e ``vh`` (viewport height), para definir as dimensões das imagens em relação às dimensões da janela do navegador.
+
+    css
+
+    img {
+        width: 50vw;
+        height: auto;
+    }
+
+Neste exemplo, a largura da imagem é definida como 50% da largura da viewport, tornando-a proporcional ao tamanho da tela do dispositivo.
+
+### **Media Queries:**
+
+Usar Media Queries para definir estilos diferentes para diferentes tamanhos de tela, incluindo a largura das imagens.
+
+    css
+
+    @media (max-width: 768px) {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+Neste exemplo, a largura da imagem é definida como 100% quando a largura da tela é igual ou inferior a 768 pixels, garantindo que a imagem se ajuste à largura do dispositivo em telas menores.
+
+Essas são algumas das técnicas comuns para tornar as imagens responsivas em uma página da web. Ao aplicar essas técnicas, você pode garantir que suas imagens sejam exibidas de forma adequada e otimizada em uma variedade de dispositivos e tamanhos de tela.
+
+
+### **Atributos HTML para imagens flexíveis:**
+
+``srcset``  
+Permite especificar uma lista de imagens e suas larguras correspondentes, permitindo que o navegador escolha a melhor imagem com base na resolução do dispositivo.
+
+    html
+
+    <img src="imagem-pequena.jpg" srcset="imagem-grande.jpg 2x" alt="Descrição da imagem">
+
+Neste exemplo, se o dispositivo tiver uma densidade de pixels (pixel ratio) de 2x, o navegador carregará a imagem imagem-grande.jpg para uma melhor qualidade.
+
+``sizes``  
+Informa ao navegador como as imagens devem ser exibidas em diferentes tamanhos de tela. Ele define o tamanho da imagem em relação à largura da janela do navegador.
+
+    html
+
+    <img src="imagem-pequena.jpg" srcset="imagem-pequena.jpg 500w, imagem-media.jpg 800w, imagem-grande.jpg 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px" alt="Descrição da imagem">
+
+Neste exemplo, o tamanho da imagem é ajustado com base no tamanho da janela do navegador.  
+Ela será exibida em 100% da largura da janela para dispositivos com largura máxima de 600px, em 50% da largura da janela para dispositivos com largura máxima de 1200px, e com uma largura fixa de 800px para dispositivos maiores que 1200px.
+
+Exemplo completo com CSS:
+
+Além dos atributos HTML, você também pode usar CSS para estilizar e controlar ainda mais o comportamento das imagens flexíveis:
+
+    html
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Imagens Flexíveis</title>
+        <style>
+            img {
+                max-width: 100%; /* Garante que a imagem não exceda o tamanho do contêiner */
+                height: auto; /* Mantém a proporção original da imagem */
+                display: block; /* Remove o espaço extra abaixo da imagem */
+            }
+        </style>
+    </head>
+    <body>
+        <img src="imagem.jpg" srcset="imagem.jpg 1x, imagem-2x.jpg 2x" sizes="(max-width: 600px) 100vw, 50vw" alt="Descrição da imagem">
+    </body>
+    </html>
+
+Neste exemplo, a imagem será redimensionada automaticamente para se ajustar ao tamanho do contêiner pai, garantindo uma experiência responsiva em diferentes dispositivos e tamanhos de tela.
+
+### **Picture**
+
+A declaração ``<picture>`` é uma forma avançada de fornecer imagens flexíveis e responsivas em páginas da web.  
+
+Permitindo que personalize a experiência visual de acordo com as características do dispositivo e do contexto de visualização.   
+
+Isso é essencial para garantir uma experiência de usuário consistente e de alta qualidade em diferentes dispositivos e tamanhos de tela.
+
+Ela permite que seja especificado várias fontes de imagem e condições de mídia para que o navegador possa escolher a melhor imagem com base nas características do dispositivo, como densidade de pixels, tamanho da tela e orientação.  
+
+Isso é particularmente útil quando é necessário fornecer diferentes imagens para diferentes dispositivos ou contextos de visualização.  
+
+Sintaxe:
+
+    html
+
+    <picture>
+        <source srcset="imagem-grande.jpg" media="(min-width: 1200px)">
+        <source srcset="imagem-media.jpg" media="(min-width: 600px)">
+        <img src="imagem-pequena.jpg" alt="Descrição da imagem">
+    </picture>
+
+
+A declaração ``<picture>`` oferece suporte à técnica de "art direction", que é a prática de escolher diferentes imagens com base em considerações estéticas ou de layout específicas para diferentes contextos de visualização.
+
+Exemplo de Uso:
+
+    html
+
+    <picture>
+        <source srcset="imagem-grande.jpg" media="(min-width: 1200px)">
+        <source srcset="imagem-media.jpg" media="(min-width: 600px)">
+        <img src="imagem-pequena.jpg" alt="Descrição da imagem">
+    </picture>
+
+Neste exemplo:
+
+Se a largura da janela do navegador for maior ou igual a 1200 pixels, o navegador carregará a imagem imagem-grande.jpg.  
+Se a largura da janela do navegador for maior ou igual a 600 pixels (mas menor que 1200 pixels), o navegador carregará a imagem imagem-media.jpg.  
+Se a largura da janela do navegador for menor que 600 pixels, o navegador carregará a imagem imagem-pequena.jpg.  
+
 

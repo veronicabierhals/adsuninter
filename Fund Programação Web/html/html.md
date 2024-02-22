@@ -143,3 +143,160 @@ Os campos devem estar entre as tags `<form> e </form>`
 ---
 
 A aplicação prática das tags estão no [exemplo.html](./exemplo.html).
+
+## **Elementos estruturais semânticos**
+
+Os elementos estruturais semânticos em HTML são tags que fornecem significado e estrutura ao conteúdo de uma página da web. Eles ajudam os navegadores e mecanismos de busca a entender a hierarquia e a importância do conteúdo, o que é fundamental para a acessibilidade e a indexação correta do conteúdo. 
+
+``<header>``:  
+Define o cabeçalho da página ou de uma seção específica.
+
+    <header>
+        <!-- Conteúdo do cabeçalho -->
+    </header>
+
+``<nav>``  
+Utilizado para agrupar links de navegação.
+
+    <nav>
+        <!-- Links de navegação -->
+    </nav>
+
+``<main>``  
+Define o conteúdo principal da página. Deve ser usado apenas uma vez em cada página.
+
+    <main>
+        <!-- Conteúdo principal -->
+    </main>
+
+``<section>``  
+Representa uma seção genérica em um documento.
+
+    <section>
+        <!-- Conteúdo da seção -->
+    </section>
+
+``<article>``  
+Define um conteúdo independente e autossuficiente, como uma postagem de blog ou um artigo de jornal.
+
+    <article>
+        <!-- Conteúdo do artigo -->
+    </article>
+
+``<aside>``  
+Utilizado para conteúdo relacionado, como barras laterais ou informações adicionais.
+
+    <aside>
+        <!-- Conteúdo relacionado -->
+    </aside>
+
+``<footer>``  
+Define o rodapé da página ou de uma seção específica.
+
+    <footer>
+        <!-- Conteúdo do rodapé -->
+    </footer>
+
+Estes são apenas alguns exemplos dos elementos semânticos em HTML. Utilizar essas tags apropriadamente ajuda não apenas na organização e na estruturação do seu código, mas também na acessibilidade e na otimização para mecanismos de busca.
+
+``<figure>``  
+Utilizado para agrupar qualquer conteúdo relacionado, como imagens e legendas.
+
+
+    <figure>
+        <img src="imagem.jpg" alt="Descrição da imagem">
+        <figcaption>Legenda da imagem</figcaption>
+    </figure>
+
+``<figcaption>``  
+Define a legenda para elementos ``<figure>``.
+
+    <figure>
+        <img src="imagem.jpg" alt="Descrição da imagem">
+        <figcaption>Legenda da imagem</figcaption>
+    </figure>
+
+``<details>``  
+Define um widget de controle que permite ao usuário revelar ou ocultar informações adicionais.
+
+    <details>
+        <summary>Título do detalhe</summary>
+        <!-- Conteúdo adicional -->
+    </details>
+
+``<summary>``  
+Define o título de um elemento ``<details>``.
+
+    <details>
+        <summary>Título do detalhe</summary>
+        <!-- Conteúdo adicional -->
+    </details>
+
+``<time>``  
+Define um período de tempo ou uma data específica.
+
+    <time datetime="2024-02-22">22 de fevereiro de 2024</time>
+
+``<mark>``  
+Utilizado para destacar parte do texto.
+
+    <p>Este é um <mark>texto destacado</mark> em um parágrafo.</p>
+
+``<abbr>``  
+Define uma abreviação ou um acrônimo, com a opção de fornecer uma descrição completa.
+
+    <p><abbr title="Cascading Style Sheets">CSS</abbr> é usado para estilizar páginas da web.</p>
+
+## **Posicionamento com span**
+
+É uma técnica comum para aplicar estilos a parte do texto ou conteúdo em linha, sem quebrar o fluxo normal do texto.  
+
+O elemento ``<span>`` é um elemento de conteúdo em linha genérico que não possui significado semântico próprio, mas pode ser usado em conjunto com classes ou IDs para aplicar estilos ou manipulações de JavaScript de forma seletiva.  
+
+O uso de ``<span>`` para posicionamento e estilização permite uma grande flexibilidade ao trabalhar com conteúdo em linha no HTML, especialmente quando você precisa aplicar estilos ou manipulações específicas a partes específicas do texto.   
+
+Certifique-se de usar ``<span>`` de forma semântica e significativa, evitando o uso excessivo quando elementos mais semânticos, como ``<strong>`` ou ``<em>``, forem mais apropriados.
+
+### **Aplicando estilos a uma parte do texto**
+
+Pode-se usar ``<span>`` para envolver uma parte específica do texto e aplicar estilos apenas a essa parte.
+
+    <p>Este é um parágrafo com <span style="font-weight: bold;">texto em negrito</span>.</p>
+
+Neste exemplo, o texto "texto em negrito" será exibido em negrito, enquanto o restante do parágrafo permanecerá em estilo padrão.
+
+### **Aplicando classes para estilização**
+
+Em vez de estilos embutidos, é recomendado aplicar estilos por meio de classes CSS para separar a estrutura do conteúdo da sua apresentação.
+
+    html
+    <p>Este é um parágrafo com <span class="destaque">texto destacado</span>.</p>
+
+    css
+    .destaque {
+        color: red;
+        font-size: 18px;
+    }
+
+Neste exemplo, a classe ``.destaque`` é aplicada ao ``<span>`` para definir a cor do texto como vermelho e aumentar seu tamanho para 18 pixels.
+
+### **Manipulação de texto com JavaScript**
+
+Também é possível usar ``<span>`` em conjunto com JavaScript para manipular dinamicamente partes do texto.
+
+    html
+    <p>Selecione o idioma: <span id="language">Inglês</span></p>
+    <button onclick="changeLanguage()">Mudar idioma</button>
+
+    <script>
+        function changeLanguage() {
+            var span = document.getElementById('language');
+            span.textContent = 'Português';
+        }
+    </script>
+
+Neste exemplo, ao clicar no botão, o texto dentro do ``<span>`` com o ID "language" será alterado de "Inglês" para "Português".
+
+
+
+
