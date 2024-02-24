@@ -39,7 +39,9 @@ Nesta seção, você encontrará instruções sobre como utilizar duas ferrament
 
 ### [Fundamentos de Programação Web](https://github.com/veronicabierhals/adsuninter/tree/main/Fund%20Programa%C3%A7%C3%A3o%20Web)
 
-[Fundamentos de HTML](https://github.com/veronicabierhals/adsuninter/tree/main/Fund%20Programa%C3%A7%C3%A3o%20Web/html)
+[HTML](https://github.com/veronicabierhals/adsuninter/tree/main/Fund%20Programa%C3%A7%C3%A3o%20Web/html)
 <br>
-[Fundamentos de CSS](https://github.com/veronicabierhals/adsuninter/tree/main/Fund%20Programa%C3%A7%C3%A3o%20Web/css)
+[CSS](https://github.com/veronicabierhals/adsuninter/tree/main/Fund%20Programa%C3%A7%C3%A3o%20Web/css)
+<br>
+[JavaScript](https://github.com/veronicabierhals/adsuninter/tree/main/Fund%20Programa%C3%A7%C3%A3o%20Web/js)
 
